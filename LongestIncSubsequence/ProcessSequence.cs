@@ -1,5 +1,4 @@
-﻿using LongestIncSubsequence.Extentions;
-using LongestIncSubsequence.Services;
+﻿using LongestIncSubsequence.Services;
 
 namespace LongestIncSubsequence
 {
@@ -27,7 +26,7 @@ namespace LongestIncSubsequence
             {
                 Console.WriteLine($"Enter string with numbers delimited by a space. Example: {strSequence}");
 
-             //   strSequence = Console.ReadLine();
+                strSequence = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(strSequence))
                     return 0;
@@ -42,7 +41,7 @@ namespace LongestIncSubsequence
             }
             catch (Exception exp)
             {
-                Console.WriteLine(exp.Message);
+                Console.WriteLine($"Error: {exp.Message}");
                 return -1;
             }
         }

@@ -6,7 +6,10 @@ namespace LongestIncSubsequence.Services
     {
         public string GetLongestIncreasingSubSequence<T>(string input) where T: IComparable, IConvertible
         {
-            return string.Join(' ', GetLongestIncreasingSubSequence(input.ToArray<T>(' ')));
+            if(string.IsNullOrEmpty(input))
+                return string.Empty;
+
+            return string.Join(' ', GetLongestIncreasingSubSequence(input.ToArray<T>()));
         }
 
         private T[] GetLongestIncreasingSubSequence<T>(T[] input) where T : IComparable

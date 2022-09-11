@@ -14,11 +14,10 @@ namespace UnitTest
         {
             // Arrange
             string input = "6 1 5 9 2";
-            char delimiter = ' ';
             int[] expected = new int[] { 6, 1, 5, 9, 2 };
 
             // Act
-            int[] actual = input.ToArray<int>(delimiter);
+            int[] actual = input.ToArray<int>();
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -32,11 +31,10 @@ namespace UnitTest
         {
             // Arrange
             string input = "6";
-            char delimiter = ' ';
             int[] expected = new int[] { 6 };
 
             // Act
-            int[] actual = input.ToArray<int>(delimiter);
+            int[] actual = input.ToArray<int>();
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -50,10 +48,9 @@ namespace UnitTest
         {
             // Arrange
             string input = String.Empty;
-            char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToArray<int>(delimiter);
+            var fn = () => input.ToArray<int>();
 
             // Assert
             Assert.Throws<FormatException>(() => fn());
@@ -66,11 +63,10 @@ namespace UnitTest
         public void ToArray_NullString_ThrowsNullReferenceException()
         {
             // Arrange
-            string? input = null;
-            char delimiter = ' ';
+            string input = null;
 
             // Act
-            var fn = () => input.ToArray<int>(delimiter);
+            var fn = () => input.ToArray<int>();
 
             // Assert
             Assert.Throws<NullReferenceException>(() => fn());
@@ -84,10 +80,9 @@ namespace UnitTest
         {
             // Arrange
             string input = "6?23";
-            char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToArray<int>(delimiter);
+            var fn = () => input.ToArray<int>();
 
             // Assert
             Assert.Throws<FormatException>(() => fn());
@@ -101,10 +96,9 @@ namespace UnitTest
         {
             // Arrange
             string input = "6   23";
-            char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToArray<int>(delimiter);
+            var fn = () => input.ToArray<int>();
 
             // Assert
             Assert.Throws<FormatException>(() => fn());
@@ -122,11 +116,10 @@ namespace UnitTest
         {
             // Arrange
             string input = "6.23 23.5";
-            char delimiter = ' ';
             double[] expected = new double[] { 6.23, 23.5 };
 
             // Act
-            double[] actual = input.ToArray<double>(delimiter);
+            double[] actual = input.ToArray<double>();
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));

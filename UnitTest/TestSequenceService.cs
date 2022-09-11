@@ -254,19 +254,20 @@ namespace UnitTest
         }
 
         /// <summary>
-        /// For empty string, throws FormatException
+        /// For empty string, returns empty string
         /// </summary>
         [Test]
-        public void GetLIS_WithEmptyString_ThrowsFormatException()
+        public void GetLIS_WithEmptyString_ReturnsEmptyString()
         {
             // Arrange
             string input = String.Empty;
+            string expected = String.Empty;
 
             // Act
-            var fn = () => _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<double>(input);
 
             // Assert
-            Assert.Throws<FormatException>(() => fn());
+            Assert.That(actual, Is.EqualTo(expected));
         }
         /// <summary>
         /// For string with multiple spaces, throws FormatException
@@ -285,19 +286,20 @@ namespace UnitTest
         }
 
         /// <summary>
-        /// For empty string, throws NullReferenceException
+        /// For null string, returns empty string
         /// </summary>
         [Test]
-        public void GetLIS_WithNullString_ThrowsNullReferenceException()
+        public void GetLIS_WithNullString_ReturnsEmptyString()
         {
             // Arrange
             string input = null;
+            string expected = string.Empty;
 
             // Act
-            var fn = () => _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+            var actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
-            Assert.Throws<NullReferenceException>(() => fn());
+            Assert.That(actual, Is.EqualTo(expected));
         }
 
         #endregion

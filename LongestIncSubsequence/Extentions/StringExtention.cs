@@ -20,7 +20,7 @@
         //     string not in correct format.
         //   T:System.InvalidCastException:
         //     conversion not supported.
-        public static T[] ToArray<T>(this string input, char delimiter) where T : IConvertible
+        public static T[] ToArray<T>(this string input, char delimiter = ' ') where T : IConvertible
         {
             var inputNumString = input.Split(delimiter);
 
