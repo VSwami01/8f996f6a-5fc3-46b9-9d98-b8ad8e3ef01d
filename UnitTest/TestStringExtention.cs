@@ -4,7 +4,7 @@ namespace UnitTest
 {
     public class TestStringExtention
     {
-        #region Test ToIntArray
+        #region Test ToArray wit integers
 
         /// <summary>
         /// For string of numbers delimited by white spaces, get int array
@@ -112,7 +112,7 @@ namespace UnitTest
 
         #endregion
 
-        #region Test ToArray
+        #region Test ToArray with double
 
         /// <summary>
         /// For string with double, returns array of double

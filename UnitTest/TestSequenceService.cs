@@ -12,7 +12,6 @@ namespace UnitTest
 
         #region Provided Test Cases
 
-
         /// <summary>
         /// For Test case 1, get Longest Increasing SubSequence (LIS)
         /// </summary>
@@ -200,6 +199,107 @@ namespace UnitTest
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
+        #endregion
+
+        #region Edge cases
+
+        /// <summary>
+        /// For string sequence of one number, get Longest Increasing SubSequence (LIS) with one number
+        /// </summary>
+        [Test]
+        public void GetLIS_WithOneNumber_ReturnsLIS()
+        {
+            // Arrange
+            string input = "6903";
+            string expected = "6903";
+
+            // Act
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        /// <summary>
+        /// For string sequence with negative numbers, get Longest Increasing SubSequence (LIS) with one number
+        /// </summary>
+        [Test]
+        public void GetLIS_WithNegativeNumbers_ReturnsLIS()
+        {
+            // Arrange
+            string input = "-7 -5 -2 5 -8 6 3 9";
+            string expected = "-7 -5 -2 5";
+
+            // Act
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+        /// <summary>
+        /// For string sequence with double numbers, get Longest Increasing SubSequence (LIS) with one number
+        /// </summary>
+        [Test]
+        public void GetLIS_WithDoubles_ReturnsLIS()
+        {
+            // Arrange
+            string input = "7.5 5.2 2.7 5.4 8.9 6.1 3.2 9.3";
+            string expected = "2.7 5.4 8.9";
+
+            // Act
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<double>(input);
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        /// <summary>
+        /// For empty string, throws FormatException
+        /// </summary>
+        [Test]
+        public void GetLIS_WithEmptyString_ThrowsFormatException()
+        {
+            // Arrange
+            string input = String.Empty;
+
+            // Act
+            var fn = () => _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+
+            // Assert
+            Assert.Throws<FormatException>(() => fn());
+        }
+        /// <summary>
+        /// For string with multiple spaces, throws FormatException
+        /// </summary>
+        [Test]
+        public void GetLIS_WithStringWithMultipleSpaces_ThrowsFormatException()
+        {
+            // Arrange
+            string input = "6 2 4 3   1 5 9";
+
+            // Act
+            var fn = () => _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+
+            // Assert
+            Assert.Throws<FormatException>(() => fn());
+        }
+
+        /// <summary>
+        /// For empty string, throws NullReferenceException
+        /// </summary>
+        [Test]
+        public void GetLIS_WithNullString_ThrowsNullReferenceException()
+        {
+            // Arrange
+            string input = null;
+
+            // Act
+            var fn = () => _sequenceService.GetLongestIncreasingSubSequence<int>(input);
+
+            // Assert
+            Assert.Throws<NullReferenceException>(() => fn());
+        }
+
         #endregion
 
     }
