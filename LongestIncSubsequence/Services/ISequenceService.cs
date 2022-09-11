@@ -2,7 +2,6 @@
 {
     public interface ISequenceService
     {
-        string GetLongestIncreasingSubSequence(string input);
-        int[] GetLongestIncreasingSubSequence(int[] input);
+        string GetLongestIncreasingSubSequence<T>(string input) where T : IComparable, IConvertible;
     }
 }

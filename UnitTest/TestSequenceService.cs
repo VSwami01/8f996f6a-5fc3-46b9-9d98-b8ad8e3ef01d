@@ -24,7 +24,7 @@ namespace UnitTest
             string expected = "1 5 9";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -41,7 +41,7 @@ namespace UnitTest
             string expected = "1710 2461 9288 10195 10431 12485";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -58,7 +58,7 @@ namespace UnitTest
             string expected = "10298 10897 12291 15037 18446 23435 25333 27266";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -76,7 +76,7 @@ namespace UnitTest
             string expected = "3862 16353 22813 28735";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -93,7 +93,7 @@ namespace UnitTest
             string expected = "11084 11970 24975 30922";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -110,7 +110,7 @@ namespace UnitTest
             string expected = "3808 3908 10386 19306";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -127,7 +127,7 @@ namespace UnitTest
             string expected = "125 1841 5882 18464 28317 31497";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -144,7 +144,7 @@ namespace UnitTest
             string expected = "9139 17687 25106 26202 27592 30937";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -161,7 +161,7 @@ namespace UnitTest
             string expected = "918 1089 5133 7725 18035 24605 26716 27095";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -178,7 +178,7 @@ namespace UnitTest
             string expected = "2 4 6";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -195,7 +195,7 @@ namespace UnitTest
             string expected = "1 5 9";
 
             // Act
-            string actual = _sequenceService.GetLongestIncreasingSubSequence(input);
+            string actual = _sequenceService.GetLongestIncreasingSubSequence<int>(input);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));

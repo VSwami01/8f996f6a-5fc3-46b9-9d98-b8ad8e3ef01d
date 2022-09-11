@@ -1,5 +1,5 @@
-﻿using LongestIncSubsequence.Extentions;
-using LongestIncSubsequence.Services;
+﻿using LongestIncSubsequence.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace LongestIncSubsequence
 {
@@ -7,17 +7,15 @@ namespace LongestIncSubsequence
     {
         static void Main(string[] args)
         {
-            ISequenceService sequenceService = new SequenceService();
+            // Setup Dependency Injection
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IProcessSequence, ProcessSequence>()
+                .AddSingleton<ISequenceService, SequenceService>()
+                .BuildServiceProvider();
 
-            string strSequence = "6 2 4 6 1 5 9 12";
+            // Start processing sequence
+            serviceProvider.GetService<IProcessSequence>().Start();
 
-            int[] intSequence = strSequence.ToIntArray(' ');
-
-            var result = sequenceService.GetLongestIncreasingSubSequence(intSequence);
-
-            Console.WriteLine($"[{string.Join(", ", result)}]");
-
-            Console.ReadLine();
         }
     }
 }

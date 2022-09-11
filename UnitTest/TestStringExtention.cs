@@ -10,7 +10,7 @@ namespace UnitTest
         /// For string of numbers delimited by white spaces, get int array
         /// </summary>
         [Test]
-        public void ToIntArray_StringOfNumbersDelimitedByWhiteSpaces_ReturnsIntArray()
+        public void ToArray_StringOfNumbersDelimitedByWhiteSpaces_ReturnsIntArray()
         {
             // Arrange
             string input = "6 1 5 9 2";
@@ -18,7 +18,7 @@ namespace UnitTest
             int[] expected = new int[] { 6, 1, 5, 9, 2 };
 
             // Act
-            int[] actual = input.ToIntArray(delimiter);
+            int[] actual = input.ToArray<int>(delimiter);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -28,7 +28,7 @@ namespace UnitTest
         /// For string of single number, get int array with one element
         /// </summary>
         [Test]
-        public void ToIntArray_StringOfSingleNumber_ReturnsIntArrayWithOneNumber()
+        public void ToArray_StringOfSingleNumber_ReturnsIntArrayWithOneNumber()
         {
             // Arrange
             string input = "6";
@@ -36,7 +36,7 @@ namespace UnitTest
             int[] expected = new int[] { 6 };
 
             // Act
-            int[] actual = input.ToIntArray(delimiter);
+            int[] actual = input.ToArray<int>(delimiter);
 
             // Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -46,14 +46,14 @@ namespace UnitTest
         /// For empty string, throws FormatException
         /// </summary>
         [Test]
-        public void ToIntArray_EmptyString_ThrowsFormatException()
+        public void ToArray_EmptyString_ThrowsFormatException()
         {
             // Arrange
             string input = String.Empty;
             char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToIntArray(delimiter);
+            var fn = () => input.ToArray<int>(delimiter);
 
             // Assert
             Assert.Throws<FormatException>(() => fn());
@@ -63,14 +63,14 @@ namespace UnitTest
         /// For empty string, throws NullReferenceException
         /// </summary>
         [Test]
-        public void ToIntArray_NullString_ThrowsNullReferenceException()
+        public void ToArray_NullString_ThrowsNullReferenceException()
         {
             // Arrange
             string? input = null;
             char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToIntArray(delimiter);
+            var fn = () => input.ToArray<int>(delimiter);
 
             // Assert
             Assert.Throws<NullReferenceException>(() => fn());
@@ -80,14 +80,14 @@ namespace UnitTest
         /// For string delimited by non space, throws FormatException
         /// </summary>
         [Test]
-        public void ToIntArray_StringDelimitedByNonSpace_ThrowsFormatException()
+        public void ToArray_StringDelimitedByNonSpace_ThrowsFormatException()
         {
             // Arrange
             string input = "6?23";
             char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToIntArray(delimiter);
+            var fn = () => input.ToArray<int>(delimiter);
 
             // Assert
             Assert.Throws<FormatException>(() => fn());
@@ -97,14 +97,14 @@ namespace UnitTest
         /// For string delimited by non space, throws FormatException
         /// </summary>
         [Test]
-        public void ToIntArray_StringDelimitedByMultipleSpaces_ThrowsFormatException()
+        public void ToArray_StringDelimitedByMultipleSpaces_ThrowsFormatException()
         {
             // Arrange
             string input = "6   23";
             char delimiter = ' ';
 
             // Act
-            var fn = () => input.ToIntArray(delimiter);
+            var fn = () => input.ToArray<int>(delimiter);
 
             // Assert
             Assert.Throws<FormatException>(() => fn());

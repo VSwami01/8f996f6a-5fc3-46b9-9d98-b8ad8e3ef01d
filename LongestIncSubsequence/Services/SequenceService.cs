@@ -4,11 +4,12 @@ namespace LongestIncSubsequence.Services
 {
     public class SequenceService : ISequenceService
     {
-        public string GetLongestIncreasingSubSequence(string input)
+        public string GetLongestIncreasingSubSequence<T>(string input) where T: IComparable, IConvertible
         {
-            return string.Join(' ', GetLongestIncreasingSubSequence(input.ToIntArray(' ')));
+            return string.Join(' ', GetLongestIncreasingSubSequence(input.ToArray<T>(' ')));
         }
-        public int[] GetLongestIncreasingSubSequence(int[] input)
+
+        private T[] GetLongestIncreasingSubSequence<T>(T[] input) where T : IComparable
         {
             if (input.Length == 0)
                 return input;
@@ -21,7 +22,7 @@ namespace LongestIncSubsequence.Services
 
             for (int i = 0; i < input.Length; i++)
             {
-                if (i == 0 || input[i] > input[i - 1])
+                if (i == 0 || input[i].CompareTo(input[i - 1]) == 1)
                 {
                     subSequenceCount++;
 
@@ -37,6 +38,7 @@ namespace LongestIncSubsequence.Services
                     subSequenceCount = 1;
                 }
             }
+
             return input[maxSequenceStartIndex..(maxSequenceStartIndex + maxSequenceCount)];
         }
 

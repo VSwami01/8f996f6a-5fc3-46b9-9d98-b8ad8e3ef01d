@@ -4,30 +4,6 @@
     {
         //
         // Summary:
-        //     Converts a string to integer array using a delimeter.
-        //
-        // Parameters:
-        //   string:
-        //     String having numbers to convert to an integer array.
-        //
-        // Returns:
-        //     An array of integer type containing numbers from the source string.
-        //
-        // Exceptions:
-        //   T:System.ArgumentNullException:
-        //     string is null.
-        //   T:System.FormatException:
-        //     string not in correct format.
-        //   T:System.InvalidCastException:
-        //     conversion not supported.
-
-        public static int[] ToIntArray(this string input, char delimiter)
-        {
-            return input.ToArray<int>(delimiter);
-        }
-
-        //
-        // Summary:
         //     Converts a string to an array using a delimeter.
         //
         // Parameters:
