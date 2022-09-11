@@ -1,7 +1,13 @@
-﻿namespace LongestIncSubsequence.Services
+﻿using LongestIncSubsequence.Extentions;
+
+namespace LongestIncSubsequence.Services
 {
     public class SequenceService : ISequenceService
     {
+        public string GetLongestIncreasingSubSequence(string input)
+        {
+            return string.Join(' ', GetLongestIncreasingSubSequence(input.ToIntArray(' ')));
+        }
         public int[] GetLongestIncreasingSubSequence(int[] input)
         {
             if (input.Length == 0)
