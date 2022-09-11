@@ -1,4 +1,5 @@
-﻿using LongestIncSubsequence.Services;
+﻿using LongestIncSubsequence.Extentions;
+using LongestIncSubsequence.Services;
 
 namespace LongestIncSubsequence
 {
@@ -8,8 +9,11 @@ namespace LongestIncSubsequence
         {
             ISequenceService sequenceService = new SequenceService();
 
-            var result = sequenceService.GetLongestIncreasingSubSequence
-                (new int[] {6, 2, 4, 6, 1, 5, 9, 12 });
+            string strSequence = "6 2 4 6 1 5 9 12";
+
+            int[] intSequence = strSequence.ToIntArray(' ');
+
+            var result = sequenceService.GetLongestIncreasingSubSequence(intSequence);
 
             Console.WriteLine($"[{string.Join(", ", result)}]");
 
